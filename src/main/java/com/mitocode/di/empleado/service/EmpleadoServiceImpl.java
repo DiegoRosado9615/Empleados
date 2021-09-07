@@ -10,9 +10,15 @@ public class EmpleadoServiceImpl implements EmpleadoService {
 		// TODO Auto-generated method stub
 		return empleoyerRepository.empleoyerExist(e);
 	}
-	
+	@Override
 	public boolean esMayorEdad(int i) {
 		return empleoyerRepository.esMayorEdad(i);
+	}
+	
+	@Override
+	public boolean existeTrabajo(Employees e) {
+		// TODO Auto-generated method stub
+		return empleoyerRepository.existJob(e);
 	}
 	
 	

@@ -11,6 +11,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 
 import com.mitocode.di.empleados.dto.Employees;
+import com.mitocode.di.empleados.dto.Job;
 
 public class EmpleoyerRepository {
 	@Autowired
@@ -45,6 +46,12 @@ public class EmpleoyerRepository {
 				}
 			});
 			return e.esMayorEdad(e.getBirthdate());	
+		}
+		
+		public boolean existJob(Employees e) {
+			List <Job> jobs= new ArrayList();
+			jobs=jdbcTemplate.query("select * from jobs", new BeanPropertyRowMapper(Employees.class));
+			return e.existeTrabajo(jobs); 
 		}
 		
 }

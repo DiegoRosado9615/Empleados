@@ -15,6 +15,14 @@ public interface EmpleadoService {
 	 */
 	public boolean esMayorEdad(int i);
 	
+	/**
+	 * Nos permite saber si el trabajo existe o no existe
+	 * 
+	 */
+	public boolean existeTrabajo(Employees e);
+
+	
+	
 	
 
 }
